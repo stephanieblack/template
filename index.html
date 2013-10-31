@@ -14,84 +14,74 @@
     <![endif]-->
   
 <script src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+$('#navbar').scrollspy();
+
+
+$('[data-spy="affix"]').each(function () {
+  var $spy = $(this).scrollspy('refresh')
+});
+
+
+function setImageClass() {
+    switch(true) {
+        case($(window).width()>600): $("body").removeClass("w200 w400").addClass("w600");
+        break;
+        case($(window).width()>400): $("body").removeClass("w200 w600").addClass("w400");
+        break;
+        default: $("body").removeClass("w400 w600").addClass("w200");
+        break;
+    }
+}
+
+$(document).ready(function() {
+    setImageClass();
+});
+
+$(window).resize(function() {
+    setImageClass();
+});
+</script>
 
 </head>
-  <body>
- <!-- Docs page layout -->
-    <div class="bs-header" id="content">
+  <body data-spy="scroll" data-target="#navbar">
       <div class="container">
-        <h1>CAIS Self Study</h1>
-        <p>Welcome, CAIS Schools! Thanks for filling out this self study template.</p>
-       </div>
+<!-- Fixed navbar -->
 
-      </div>
+      <div class="container">
+<div id="navbar">
+    <div class="nav-pills nav-stacked navbar-fixed-top col-md-2">
+<ul class="nav nav-pills nav-stacked">
+            <li>
+	<a href="#preface"><span class="glyphicon glyphicon-home"></span> Preface</a>
+
+	</li>
+            <li><a href="#introduction"><span class="glyphicon glyphicon-list-alt"></span> Introduction</a></li>
+            <li><a href="#sectioni"><span class="glyphicon glyphicon-briefcase"></span> Section I: Institutional Core Values, Purpose, and Aspirations</a>
+
+</li>
+            <li><a href="#sectionii"><span class="glyphicon glyphicon-book"></span> Section II:  Teaching and Learning	</a>
+
+
+</li>
+
+
+</li>
+            <li><a href="#sectioniii"><span class="glyphicon glyphicon-usd"></span> Section III:  Financial Sustainability</a></li>
+            <li><a href="#sectioniv"><span class="glyphicon glyphicon-inbox"></span> Section IV:  Operations</a></li>
+            <li><a href="#sectionv"><span class="glyphicon glyphicon-gift"></span> Section V:  Institutional Stewardship and Leadership</a></li>
+            <li><a href="#sectionvi"><span class="glyphicon glyphicon-tree-deciduous"></span> Section VI:  Institutional Improvement and Sustainability</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+
     </div>
 
-
-  <!-- Docs page layout -->
-    <div class="bs-header" id="content">
-      <div class="container">
-        <h1>CAIS Self Study</h1>
-        <p>Over a dozen reusable components built to provide iconography, dropdowns, navigation, alerts, popovers, and much more.</p>
-        <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
-
-      </div>
-    </div>
-
-    <!-- Callout for the old docs link -->
-    <div class="bs-old-docs">
-  <div class="container">
-    <strong>
-      <a href="../2.3.2/">Looking for Bootstrap 2.3.2 docs?</a>
-    </strong>
-    We've moved it to a new home while we push forward with Bootstrap 3. <a href="http://blog.getbootstrap.com/">Read the blog</a> for details.
-  </div>
-</div>
-
-
-    <div class="container bs-docs-container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="bs-sidebar hidden-print" role="complementary">
-            <ul class="nav bs-sidenav">
-              
-                <li>
-  <a href="#glyphicons">Glyphicons</a>
-  <ul class="nav">
-    <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
-    <li><a href="#glyphicons-how-to-use">How to use</a></li>
-    <li><a href="#glyphicons-examples">Examples</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#dropdowns">Dropdowns</a>
-  <ul class="nav">
-    <li><a href="#dropdowns-example">Example</a></li>
-    <li><a href="#dropdowns-alignment">Alignment options</a></li>
-    <li><a href="#dropdowns-headers">Headers</a></li>
-    <li><a href="#preface">Disabled menu items</a></li>
-  </ul>
-</li>
-<li>
- 
-
-
-              
-            </ul>
-          </div>
-        </div>
         <div class="col-md-9" role="main">
 
-
-
-
-    <h1> </h1>
-
-<div class="bs-docs-section">
     <div class="page-header">
       <h1 id="preface">Preface</h1>
     </div>
-    <p class="lead">This self-study manual has grown out of a commitment to re-envision the accreditation process for independent schools.  It took its shape in response to extensive feedback from CAIS school heads, along with three years of deliberations among the members of the Joint Accreditation Review Committee (“JARC”), which was co-sponsored by the California Association of Independent Schools and the Hawaii Association of Independent Schools.</p>
+    <p class="lead">This self-study manual has grown out of a commitment to re-envision the accreditation process for independent schools.  It took its shape in response to extensive feedback from CAIS school heads, along with three years of deliberations among the members of the Joint Accreditation Review Committee (JARC), which was co-sponsored by the California Association of Independent Schools and the Hawaii Association of Independent Schools.</p>
 
 <p>&nbsp;</p>
 
@@ -134,7 +124,7 @@
 <p style="text-align:right">&nbsp;</p>
 
 
-</div>
+
 
 
 <div class="bs-docs-section">
@@ -161,8 +151,8 @@
 	<li>Add other information that might be useful to help the Visiting Committee understand the school.</li>
 </ol>
 
-<textarea name="editor1">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
-
+<div class="well well-lg"><textarea class="form-control" rows="5" name="editor1">Fill out your school's profile, using prompts above.</textarea>
+</div>
 
 
 <p>&nbsp;</p>
@@ -175,9 +165,814 @@
 
 
 
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectioni">Section I.</h1>
+    </div>
+      <h3 id="section1">1. Mission. </h3>
+<hr>
+    <p class="lead">A school&rsquo;s mission statement articulates its core values and purpose. The mission plays an essential role in informing and guiding the school&rsquo;s vision of education, and it brings coherence and context to all aspects of school life. &nbsp;A strong mission statement is a living document that captures the school&rsquo;s aspirations, inspires reflection and growth, and resonates with constituents in the school community.</p>
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Definition of this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <strong>Standard 1:</strong>The school has a clearly articulated mission statement, formally adopted by the Board of Trustees, that defines its purpose and core values, and informs all major planning and decision-making.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Indicators of meeting this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+<p><em>Schools that are meeting the standard at a high level will typically exhibit most or all of the following indicators.</em></p>
+<ol>
+	<li>
+	<p>The mission statement is a functional document in the life of the school, regularly used as a benchmark in planning and decision-making, thus providing direction and coherence to school operations and growth, as well as a foundation upon which priorities are based.</p>
+	</li>
+	<li dir="ltr">
+	The mission is broadly available and is understood and supported by the constituencies of the school.
+	</li>
+	<li dir="ltr">
+	The mission statement is a force for continuing school improvement.
+	</li>
+	<li dir="ltr">
+	The mission statement is a key component of the school&rsquo;s marketing, admissions, and hiring activities.
+	</li>
+	<li dir="ltr">
+	There is a policy or practice of periodically reviewing the mission statement for currency and relevance, and there is a process for making changes to it. This process occurs minimally once within each accreditation cycle and includes the active involvement of the Board of Trustees.
+	</li>
+</ol>
+       
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Baseline requirement for meeting this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p dir="ltr"><strong>Baseline Requirements Checklist for Standard 1: &nbsp;</strong><em>Schools are typically expected to fulfill all of the baseline requirements listed below, as they are essential to the operation of an effective school. &nbsp;If the school responds &ldquo;no&rdquo; to any of the items, an explanation for that response is necessary and can be entered at the end of this section below the checklist.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li dir="ltr">
+	<p dir="ltr">The school has a written, published mission statement, formally adopted by the governing board. </p>
+	</li>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes, my school has a mission statement.
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No, my school does not have a mission statement.
+  </label>
+</div>
+
+</ol>
+      </div>
+    </div>
+  </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Questions for this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p dir="ltr"><strong>Questions:</strong><span style="background-color:transparent; color:rgb(0, 0, 0); font-family:times new roman; font-size:15px"> </span><em>Please respond to each of the following questions, keeping in mind that they are intended to promote institutional self-reflection and depth of thought. &nbsp;Responses that display insight and succinctness are preferred over those that rely heavily on sheer volume and length. &nbsp;If, in order to avoid potential redundancy, a school chooses to answer two or more questions simultaneously with one essay response, it should be clearly indicated.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li dir="ltr">
+	<p>A mission statement is critical to understanding all institutional decision-making with respect to people, program, physical plant, financial resources, community relationships, and other important factors. Accordingly, please provide here the text of the school&rsquo;s mission statement. </span></p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><span style="background-color:transparent">Describe the most recent review of the mission</span><span style="background-color:transparent; color:rgb(255, 0, 0)"> </span><span style="background-color:transparent">statement and explain why it was or was not changed. &nbsp;</span></p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><span style="background-color:transparent">Provide two or three specific examples of how the mission statement played a role in major decision-making or planning since the last self-study.</span></p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><span style="background-color:transparent">In considering the alignment of the school&rsquo;s mission statement with the current operations &nbsp;&nbsp; &nbsp;of the school and the compatibility of the components of the mission statement with each other, explain any areas in which there is tension or lack of alignment or compatibility. What efforts are being made to resolve these issues? </span></p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+	<li>
+	<p dir="ltr"><span style="background-color:transparent">With respect to the mission, what are the school&rsquo;s areas of greatest strength, and in what areas would the school like to improve?</span></p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+</ol>
+      </div>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectionii">Section II: Teaching and Learning</h1>
+<hr>
+<h2 id="section2"> 2.Educational Programs</h2>
+    </div>
+    <p class="lead">The school&rsquo;s educational program&mdash;its curricular and co-curricular offerings&mdash;clearly reflects and embodies the values and purpose articulated in the mission. &nbsp;The faculty and administration take the lead in shaping the program, and it is designed to deeply engage students in helping them to develop the capacities and acquire the knowledge that will prepare them not only for their future education, but also for constructive and fulfilling lives. &nbsp;A successful educational program is the focus of constant assessment and debate, since the students for whom it is designed, as well as the society in which those students live, continue to pose new questions and challenges for learning environments.</p>
+ 
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Definition of this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        Standard 2: Guided by the mission, the school clearly defines its curricular and co-curricular programs and provides coherent documentation of them. The programs are regularly evaluated, updated, and strengthened in order to stay current with relevant educational research, to assure the intended outcomes in student learning, and to prepare students for the next stage of their academic careers.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Indicators of meeting this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Baseline requirement for meeting this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><strong>Baseline Requirements Checklist for Standard 2: </strong><em>Schools are typically expected to fulfill all of the baseline requirements listed below, as they are essential to the operation of an effective school. &nbsp;If the school responds &ldquo;no&rdquo; to any of the items, an explanation for that response is necessary and can be entered at the end of this section below the checklist.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>The school has a written, published, comprehensive curriculum guide. 
+<div class="radio"> <label>   <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes   </label> </div> <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div>
+</p>
+      </div>
+    </div>
+  </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Questions for this standard
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+	</li>
+	<li>
+	<p>Secondary school graduation requirements fulfill or exceed the University of California &ldquo;a through g&rdquo; entrance requirements.
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div></p>
+	</li>
+	<li>
+	<p>The school calendar specifies a minimum of 175 school days per year (which may include shortened days, in-service days, parent-teacher conference days, and the like). 
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div></p>
+	</li>
+	<li>
+	<p>The school securely maintains student performance records (also required for Standard 3)
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div></p>
+	</li>
+</ol>
+
+
+<p><strong>Questions:</strong> <em>Please respond to each of the following questions, keeping in mind that they are intended to promote institutional self-reflection and depth of thought. &nbsp;Responses that display insight and succinctness are preferred over those that rely heavily on sheer volume and length. &nbsp;If, in order to avoid potential redundancy, a school chooses to answer two or more questions simultaneously with one essay response, it should be clearly indicated.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>Taking into account the future world in which the school sees its students living, describe how the curriculum is informed by that vision.</p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Describe and evaluate the rationale, process, and outcomes of the school&rsquo;s most recent significant curricular changes. How do these changes relate to the school&rsquo;s mission? To what extent is the curriculum constrained by expectations or demands imposed by the secondary schools or colleges to which the school&rsquo;s students apply for admission?</p>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How does the school monitor and assess the success of its students once they have graduated? What does this information reveal about the school&rsquo;s curriculum, co-curriculum, and the students&rsquo; experience of the school?</p>
+	</li>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	<li>
+	<p>What would the school point out as the greatest strengths of its overall educational program (both curricular and co-curricular)?</p>
+	</li>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	<li>
+	<p>How effective is the curricular program in terms of the stated mission, and how does the school assess and determine this?</p>
+	</li>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	<li>
+	<p>Evaluate the effectiveness of the school&rsquo;s co-curricular programs in light of the school&rsquo;s mission. What evidence did the school use in reaching its conclusions?</p>
+	</li>
+<textarea class="form-control" rows="3" name="editor1"></textarea>
+	<li>
+	<p>Prioritize and explain the two to five most pressing curricular and/or co-curricular issues that the school needs to address in the near future. If possible, identify strategies that the school might use as it moves ahead with this work.</p><textarea class="form-control" rows="3" name="editor1"></textarea>
+	</li>
+</ol>
+
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+
+
+
+
+
+
+
+
+<h2 id="section3"> 3.The Student Learning Experience</h2>
+<hr>
+<p><em>Independent schools have historically prided themselves on the individual attention that they are able to provide for each student, and this traditional commitment underscores the critical importance of making each student&rsquo;s learning experience as positive as possible. &nbsp;To accomplish this, schools need to develop sophisticated understandings of how different students learn, and they need thoughtful assessment systems that yield useful data that can aid teachers and administrators in most effectively shaping the learning environment for students. &nbsp;Only schools that are dedicated and successful in these endeavors will be able to maximize the effectiveness of their carefully crafted educational programs as the students experience them in daily interaction with the faculty.</em></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Standard 3:</strong> <strong>The school maintains a vigorous and informed focus on the learning of each student. It has policies, expectations, procedures, assessment systems, and student feedback mechanisms that enable it to engage&mdash;and maximize the learning potential of&mdash;each student.</strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Indicators of meeting Standard 3: </strong><em>Schools that are meeting the standard at a high level will typically exhibit most or all of the following indicators.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>The school has a clear published statement that communicates its fundamental beliefs and assumptions about how students best learn, along with an explanation of what those beliefs and assumptions are based upon.</p>
+	</li>
+	<li>
+	<p>The school has developed procedures to help all students understand how they learn and how they can improve their ability to learn.</p>
+	</li>
+	<li>
+	<p>The faculty and administration are attuned to and recognize differences in learning styles, abilities, and approaches among students, including those that may be influenced by such considerations as previous preparation, developed competence, neuropsychological factors, socioeconomic situation, gender, culture, race, and ethnicity.</p>
+	</li>
+	<li>
+	<p>The school has developed a thoughtful, in-depth, and multi-faceted system of student assessment, which compels teachers and administrators to gather and analyze important evidence regarding each student&rsquo;s learning and to implement strategies that will help each student to reach his or her potential.</p>
+	</li>
+	<li>
+	<p>There are established structures and time allotments for teachers to meet at regularly scheduled intervals and review the achievement and engagement of individual students and groups of students.</p>
+	</li>
+	<li>
+	<p>The school has established procedures to regularly inform parents about student progress.</p>
+	</li>
+	<li>
+	<p>There is an age-appropriate system in place for counseling students (and, when necessary, parents) regarding academic and social issues.</p>
+	</li>
+	<li>
+	<p>There are established procedures that the school uses to help students who struggle with learning, and there are resources available (within and beyond the school) to the faculty and administration to assist them in identifying and meeting the learning needs of individual students.&nbsp;&nbsp; &nbsp;</p>
+	</li>
+	<li>
+	<p>The school has a process in place to identify students whom it can no longer serve effectively and to counsel them in a supportive way regarding more suitable schooling options.</p>
+	</li>
+	<li>
+	<p>The school has a structured, ongoing process through which it solicits and analyzes the perspectives of students and alumni/ae about their experience of the school, and it uses the information from this process to strengthen the school and improve learning.</p>
+	</li>
+	<li>
+	<p>The school actively strives to create a daily schedule and an annual calendar that allow for students to be productively challenged and engaged, while avoiding structures and practices that lead to unmanageable student workloads and debilitating stress.</p>
+	</li>
+	<li>
+	<p>Students themselves express a high level of enthusiasm for and engagement with their academic work in particular and their school experience in general.</p>
+	</li>
+	<li>
+	<p>Parents generally observe and report that their children have a high level of interest and engagement in learning at the school.</p>
+	</li>
+	<li>
+	<p>Age-appropriate opportunities are in place for students to provide feedback on their experience of the teaching and learning environment of the school.</p>
+	</li>
+</ol>
+
+<p><strong>Baseline Requirements Checklist for Standard 3: </strong><em>Schools are typically expected to fulfill all of the baseline requirements listed below, as they are essential to the operation of an effective school. &nbsp;If the school responds &ldquo;no&rdquo; to any of the items, an explanation for that response is necessary and can be entered at the end of this section below the checklist.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>The school securely maintains student performance records (also required for Standard 2).&nbsp;</p>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div>
+	</li>
+</ol>
+
+<p><strong>Questions:</strong> <em>Please respond to each of the following questions, keeping in mind that they are intended to promote institutional self-reflection and depth of thought. &nbsp;Responses that display insight and succinctness are preferred over those that rely heavily on sheer volume and length. &nbsp;If, in order to avoid potential redundancy, a school chooses to answer two or more questions simultaneously with one essay response, it should be clearly indicated.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>What are the fundamental assumptions or beliefs about how students best learn that guide the school&rsquo;s work? How are those beliefs enacted in the classroom, and how effective are they in promoting student learning?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How do (a) the school calendar, (b) the school schedule, (c) class size, and (d) student-teacher ratio reflect the values that the school holds, and how do they impact the student learning experience?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>If a team of campus anthropologists were to systematically visit all of the classrooms, labs, studios, athletic fields, and other learning spaces at the school during a normal class day, what typical types of learning activities would they observe the students undertaking? &nbsp;Which of these learning activities would be most common or dominant? &nbsp;To what extent would the students regularly appear to be excited or engaged by their learning? In what ways would these activities be reflective of the school&rsquo;s mission and assumptions or beliefs about learning?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Given the importance of evaluating the school&rsquo;s practices in educational assessment:</p>
+	</li>
+</ol>
+
+<ul>
+	<li>
+	<p>Describe the discussions occurring in the school about the nature of effective assessment. &nbsp;How have these discussions informed assessment practices across the grades and/or deepened teachers&rsquo; understanding of assessment?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>What specific kinds of evidence have been most useful in assessing engagement and learning?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How does the school determine the quality of students&rsquo; engagement and their growth as learners, particularly given the school&rsquo;s mission and the objectives of the educational program?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+</ul>
+
+<ol>
+	<li>
+	<p>What does the school do to help students understand how they learn, to capitalize on learning strengths and talents, and to address their learning needs and challenges?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Explain how technology and library resources are used to enhance teaching and learning. &nbsp;What commitments or objectives guide decision-making about the use of technology? &nbsp;How does the school evaluate its use of technology and gauge its impact on student learning?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>What input does the school gather directly from the students themselves, and how is this information used in curricular and other decision-making?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>In the past few years, what have alumni/ae generally reported as the most valuable or appealing features of the learning experience, as well as areas that the school should work to improve? &nbsp;Has the school made any changes in response?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Based on the responses to the questions above, what does the school conclude are the two or three most important areas that it should address to optimize the student learning experience?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+</ol>
+
+
+
+<p>&nbsp;</p>
+
+
+
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+
+
+      <h2 id="section4">4.  Faculty and Pedagogy</h2>
+<hr>
+<p><em>To engage students deeply, cultivating in them both a seriousness of purpose and a delight in learning, is the work of an effective faculty. &nbsp;A school&rsquo;s core pedagogical values and practices must not only take into careful account the characteristics of the learners and the nature of the subject matter, but also reflect the school&rsquo;s educational mission. &nbsp;Therefore, the faculty is at the heart of the school&rsquo;s work. &nbsp;Their competencies and gifts as professionals, their relationships as colleagues, and their human qualities not only shape the learning environment, but also deeply impact the students&rsquo; individual experiences in and beyond the classroom. &nbsp;A school&rsquo;s assessment of and reflection on these critical elements are essential to the vitality and effectiveness of the instructional program.</em></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Standard 4:</strong> <strong>The school has a clear set of criteria for teacher effectiveness that reflects its mission and pedagogical goals and that informs hiring, professional growth, and evaluation. &nbsp;Through regular assessment of pedagogical effectiveness, which includes student learning outcomes, the school seeks to strengthen teaching and learning.</strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Indicators of meeting Standard 4: </strong><em>Schools that are meeting the standard at a high level will typically exhibit most or all of the following indicators.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>Teachers consistently embody the core values, mission, goals and ethos of the school.</p>
+	</li>
+	<li>
+	<p>The educational background, professional experience, and training of faculty members qualify them for the specific teaching responsibilities to which they are assigned.</p>
+	</li>
+	<li>
+	<p>The faculty support and work constructively with each other and the administration in achieving the school&rsquo;s goals for teaching and learning. &nbsp;&nbsp;</p>
+	</li>
+	<li>
+	<p>Faculty members pursue ongoing personal and professional growth.</p>
+	</li>
+	<li>
+	<p>A regular faculty evaluation process is consistent, well defined, and broadly understood and supported by the faculty.</p>
+	</li>
+	<li>
+	<p>Teachers work collaboratively and actively pursue building positive relationships with their students and other adults in the school community.</p>
+	</li>
+	<li>
+	<p>Faculty members actively engage in the ongoing review of program and pedagogy and in the design and development of innovations and improvements in teaching and learning practices.</p>
+	</li>
+	<li>
+	<p>The school has written, published learning expectations across grade levels and subject areas.</p>
+	</li>
+	<li>
+	<p>There is thorough, comprehensive, and secure cumulative record-keeping in place for the documentation of student progress.</p>
+	</li>
+</ol>
+
+
+<p><strong>Baseline Requirements Checklist for Standard 4: </strong><em>Schools are typically expected to fulfill all of the baseline requirements listed below, as they are essential to the operation of an effective school. &nbsp;If the school responds &ldquo;no&rdquo; to any of the items, an explanation for that response is necessary and can be entered at the end of this section below the checklist.</em></p>
+
+<ol>
+	<li>
+	<p>
+	A process of faculty evaluation is regularly undertaken and documented.</p>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div>
+	</li>
+</ol>
+
+
+<p><strong>Questions:</strong> <em>Please respond to each of the following questions, keeping in mind that they are intended to promote institutional self-reflection and depth of thought. &nbsp;Responses that display insight and succinctness are preferred over those that rely heavily on sheer volume and length. &nbsp;If, in order to avoid potential redundancy, a school chooses to answer two or more questions simultaneously with one essay response, it should be clearly indicated.</em></p>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li>
+	<p>How effectively are faculty members engaged in the process of assessing and improving teaching and learning?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Explain the process by which the school determines the qualifications of teachers for the courses they teach. List and explain any faculty assignments that do not align directly with academic preparation. How does the school support faculty with such assignments and ensure their effectiveness?</p>
+	</li>
+	<li>
+	<p>Evaluate how program decisions are made within the school through the involvement of teachers and academic administrators in program planning and decision-making. Assess the process in terms of its effectiveness and its consistency with the philosophy and culture of the school.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Given that a school&rsquo;s values must be embodied by the faculty, what elements of the recruitment, hiring, and orientation processes help to ensure that new teachers will actively embrace the school&rsquo;s core values, especially with regard to their pedagogical approaches?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Evaluate the extent to which a commitment to the school&rsquo;s values and purpose is broadly shared by the faculty, and explain what happens when this is not the case.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How were the school&rsquo;s criteria for teacher effectiveness developed, and how well do they support the improvement of teaching?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Assess the quality and effectiveness of the professional development that the school provides for teachers as individuals, as members of departments or divisions, and as a larger group of colleagues.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Describe and assess the extent to which a culture of collaboration exists for teachers across different grades, disciplines, and divisions and the impact of it on program and student learning.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>What are the school&rsquo;s expectations of all faculty members in addressing the social, emotional, and ethical development of their students? &nbsp;How effectively are these expectations met? How does the school determine this?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Based on the responses to the questions above, what does the school conclude are the two or three most important areas that it should address to maximize faculty effectiveness?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+</ol>
+
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+
+<div class="page-header">
+      <h2 id="section5">5. Climate and Community</h2>
+    </div>
+<p class="lead"><p>While every school is built around the core values and purpose in the mission, the capacity to live out that mission depends on the quality of relationships among the people who constitute the school community. &nbsp;The &ldquo;feeling tone&rdquo; of a campus&mdash;what is often called the climate&mdash;reflects the human dimension of school life: the sense of comfort and inclusion, trust and respect, integrity, playfulness, and collaboration that suffuse daily life. &nbsp;School climate can be challenging to measure but is essential to understand because it bears directly on the school&rsquo;s quality of life and its capacity to implement change.</p>
+
+</div>
+
+<div class="panel-group" id="accordion">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseZero">
+          Standard 5
+        </a>
+      </h4>
+    </div>
+    <div id="collapseZero" class="panel-collapse collapse">
+      <div class="panel-body">
+        The school maintains a healthy climate that mirrors the mission. That climate is sustained through highly effective communication and supports the learning and personal growth of each student. It reflects a commitment to diversity, equity, and inclusion, and it is evident in the engagement of the school community.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Indicators of meeting Standard 5
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p><strong>Indicators of meeting Standard 5: </strong><em>Schools that are meeting the standard at a high level will typically exhibit most or all of the following indicators.</em></p>
+<ol>
+	<li>
+	<p>The school regularly assesses school climate through an inclusive process in order to gauge and improve the health of the community.</p>
+	</li>
+	<li>
+	<p>Faculty-administration communications and relationships are open, comfortable, and productive.</p>
+	</li>
+	<li>
+	<p>In its communications to parents, other school constituencies, and the wider community, the school seeks to ensure understanding of the school&rsquo;s mission and to inspire loyalty and constructive involvement in the life of the school.</p>
+	</li>
+	<li>
+	<p>Alumni/ae and their parents&mdash;as well as other constituencies beyond parents of current students&mdash;are actively informed about, appropriately engaged in, and supportive of the school.</p>
+	</li>
+	<li>
+	<p>In the context of its mission, the school actively promotes diversity and equity in its student body, fosters cultural competence in its faculty and staff, and seeks to instill in students an appreciation for and understanding of difference. &nbsp;Students experience the school as a safe, equitable, and inclusive place.</p>
+	</li>
+	<li>
+	<p>The school is committed to identifying and supporting the needs of the full spectrum of its students.</p>
+	</li>
+	<li>
+	<p>Employee morale is high, and employee turnover is low. &nbsp;Student morale is high and attrition low. &nbsp;Students and adults generally enjoy and look forward to coming to school.</p>
+	</li>
+	<li>
+	<p>Constituents appreciate, understand, and use avenues of communication with the school.</p>
+	</li>
+	<li>
+	<p>Students, staff, and parents are strong advocates of the school and a significant public relations asset.</p>
+	</li>
+	<li>
+	<p>There is an effective process by which families are informed and educated about policies and practices of the school.</p>
+	</li>
+	<li>
+	<p>There is a positive culture of problem-solving and institutional resilience evident in the faculty and administration of the school.</p>
+	</li>
+</ol>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Baseline Requirements Checklist for Standard 5
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+<p><em>Schools are typically expected to fulfill all of the baseline requirements listed below, as they are essential to the operation of an effective school. &nbsp;If the school responds &ldquo;no&rdquo; to any of the items, an explanation for that response is necessary and can be entered at the end of this section below the checklist.</em></p>
+        <p>The school has clearly stated policies and expectations regarding the behavior of members of the school community, which are well publicized in handbooks, on websites, or by other means. &nbsp; &nbsp;</p>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Yes
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+No
+  </label>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Questions
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+<p><strong>Questions:</strong> <em>Please respond to each of the following questions, keeping in mind that they are intended to promote institutional self-reflection and depth of thought. &nbsp;Responses that display insight and succinctness are preferred over those that rely heavily on sheer volume and length. &nbsp;If, in order to avoid potential redundancy, a school chooses to answer two or more questions simultaneously with one essay response, it should be clearly indicated.</em></p>
+<ol>
+	<li>
+	<p>Briefly describe the climate of the school. How does the school assess its climate, and how are members of the community engaged in conversations about the results?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>What are the recurring rituals and traditions in the school that feel &ldquo;sacred&rdquo; to students and adults? How do they capture or express&mdash;and in what ways do they challenge&mdash;the school&rsquo;s identity and core values?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Every school is a self-renewing community, into which new members&mdash;students and adults alike&mdash;are continuously invited. Assess the effectiveness with which newer generations enter into, come to embody, and in turn change, the culture of the school?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How effectively does the school engage alumni/ae, grandparents, and others beyond the immediate members of the school community?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>With what diversity-related issues does the school most seriously grapple? How has the school made progress in addressing diversity through the curriculum and in the life of the school? &nbsp;</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>How do current parents contribute to a positive school climate and strengthen the sense of community on which institutional health depends?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Provide a recent specific example of healthy, effective communication between faculty and administration regarding a difficult issue. What factors made it successful?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Reflect on what sustains and strengthens the school&rsquo;s climate and community and what its vulnerabilities might be. &nbsp;If a group of current constituents set out to undermine the school&rsquo;s community, how difficult would it be? &nbsp;What steps could be taken to reduce the school&rsquo;s vulnerability in this area?</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Reflect on a time in the last six years when the climate of the school became significantly challenging. &nbsp;Describe the process used to identify and address the problems that arose.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Cite concrete examples&mdash;a major event, achievement, crises, and/or challenges&mdash;where the character of the school community clearly showed itself.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+	<li>
+	<p>Take 10 pictures or five 30-second videos that richly convey the climate of the school. &nbsp;Please submit them with an explanation of how these particular samples were created and why they were chosen.</p>
+<textarea class="form-control" rows="2" name="editor1"></textarea>
+	</li>
+</ol>
+      </div>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectioniii">Section III.</h1>
+    </div>
+    <p class="lead"><p>The school&rsquo;s introduction to its self-study is a narrative profile of the school that contains descriptive and identifying information and basic overview data to provide a sense of the school and its context for the Visiting Committee, the CAIS Boards of Standards, and the WASC Commission.&nbsp; The profile should be specific and documentary rather than aspirational. This introduction should be approximately 750 to 1500 words.</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+</div>
+
+
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectioniv">Section IV.</h1>
+    </div>
+    <p class="lead"><p>The school&rsquo;s introduction to its self-study is a narrative profile of the school that contains descriptive and identifying information and basic overview data to provide a sense of the school and its context for the Visiting Committee, the CAIS Boards of Standards, and the WASC Commission.&nbsp; The profile should be specific and documentary rather than aspirational. This introduction should be approximately 750 to 1500 words.</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+</div>
+
+
+
+
+
+
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectionv">Section V.</h1>
+    </div>
+    <p class="lead"><p>The school&rsquo;s introduction to its self-study is a narrative profile of the school that contains descriptive and identifying information and basic overview data to provide a sense of the school and its context for the Visiting Committee, the CAIS Boards of Standards, and the WASC Commission.&nbsp; The profile should be specific and documentary rather than aspirational. This introduction should be approximately 750 to 1500 words.</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+</div>
+
+
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="sectionvi">Section VI.</h1>
+    </div>
+    <p class="lead"><p>The school&rsquo;s introduction to its self-study is a narrative profile of the school that contains descriptive and identifying information and basic overview data to provide a sense of the school and its context for the Visiting Committee, the CAIS Boards of Standards, and the WASC Commission.&nbsp; The profile should be specific and documentary rather than aspirational. This introduction should be approximately 750 to 1500 words.</p>
+ <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit this section </button>
+</div>
+
+
+
+
+
+</div>
+
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -190,5 +985,19 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="./hero_files/jquery.js"></script>
+    <script src="./hero_files/bootstrap-transition.js"></script>
+    <script src="./hero_files/bootstrap-alert.js"></script>
+    <script src="./hero_files/bootstrap-modal.js"></script>
+    <script src="./hero_files/bootstrap-dropdown.js"></script>
+    <script src="./hero_files/bootstrap-scrollspy.js"></script>
+    <script src="./hero_files/bootstrap-tab.js"></script>
+    <script src="./hero_files/bootstrap-tooltip.js"></script>
+    <script src="./hero_files/bootstrap-popover.js"></script>
+    <script src="./hero_files/bootstrap-button.js"></script>
+    <script src="./hero_files/bootstrap-collapse.js"></script>
+    <script src="./hero_files/bootstrap-carousel.js"></script>
+    <script src="./hero_files/bootstrap-typeahead.js"></script>
   </body>
 </html>
